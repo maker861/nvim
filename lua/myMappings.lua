@@ -18,4 +18,8 @@ mapper('n','<C-n>', ':NERDTreeToggle<cr>', opts1)
 
 mapper('n', '<C-t>', ':g/\\.*section{/#<CR>', opts1)
 
+mapper('n', '<leader>c0' , ':set conceallevel=0<Enter>', opts1)
 
+mapper('n', '<leader>c1' , ':set conceallevel=1<Enter>', opts1)
+
+mapper('n', '<leader>c2' , ':set conceallevel=2<Enter>', opts1)
