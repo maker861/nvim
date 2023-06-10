@@ -1,7 +1,5 @@
-local status_ok, npairs = pcall(require, "nvim-autopairs")
-if not status_ok then
-  return
-end
+local npairs = require('nvim-autopairs')
+local Rule = require('nvim-autopairs.rule')
 
 npairs.setup {
   map_bs = false , map_cr = false,
@@ -14,7 +12,7 @@ npairs.setup {
   disable_filetype = { "TelescopePrompt", "spectre_panel" },
   fast_wrap = {
     map = "<A-e>",
-    chars = { "{", "[", "(", '"', "'" },
+    chars = { "{", "[", "(", '"' , "'" , "$" },
     pattern = string.gsub([[ [%'%"%)%>%]%)%}%,] ]], "%s+", ""),
     offset = 0, -- Offset from pattern match
     end_key = "$",
@@ -24,6 +22,14 @@ npairs.setup {
     highlight_grey = "LineNr",
   },
 }
+
+npairs.add_rules({
+  Rule('$','$',{"tex"})
+    :with_move(function(opts)
+      return opts.next_char == opts.char
+    end
+    )
+}) 
 
 
 

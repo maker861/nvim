@@ -1,3 +1,5 @@
 {
-  "snippets.ultisnips.pythonPrompt": false
+  "snippets.ultisnips.pythonPrompt": false,
+
+  "diagnostic.displayByAle" : true
 }

@@ -4,6 +4,7 @@ filetype on
 filetype plugin on
 filetype indent on
 syntax on
+autocmd BufEnter * set number
 set number
 set scrolloff=10
 set nobackup
@@ -11,6 +12,7 @@ set foldcolumn=0
 set signcolumn=no
 set winheight=20
 set encoding=utf-8
+cd D:\
 color gruvbox-material
 ]])
 
@@ -18,13 +20,13 @@ vim.cmd[[
 set encoding=UTF-8
 colorscheme gruvbox-material
 call plug#begin('C:/Users/emyls/AppData/Local/nvim/pack/plugin/start')
+autocmd BufEnter * set concealcursor=
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'lervag/vimtex'
 Plug 'vimwiki/vimwiki'
 Plug 'preservim/nerdtree'
 Plug 'KeitaNakamura/tex-conceal.vim'
 set conceallevel=2
-autocmd BufEnter * setlocal concealcursor=
 let g:text_conceal='abdmg'
 hi Conceal ctermbg=none
 Plug 'vim-airline/vim-airline'
@@ -46,6 +48,7 @@ Plug 'nvimdev/dashboard-nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
+Plug 'dense-analysis/ale'
 
 autocmd FileType tex setlocal spell spelllang=en_us
 ]]
